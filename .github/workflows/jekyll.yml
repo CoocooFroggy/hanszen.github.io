@@ -42,12 +42,11 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Debugging with ssh
-        uses: lhotari/action-upterm@v1
       - name: Convert to webp
         run: |
           sudo apt install imagemagick
-          ./convert_webp
+          chmod +x convert_webp.sh 
+          ./convert_webp.sh
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
