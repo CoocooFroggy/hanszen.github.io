@@ -44,7 +44,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Convert to webp
         run: |
-          apt install imagemagick
+          sudo apt install imagemagick
           ./convert_webp
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
